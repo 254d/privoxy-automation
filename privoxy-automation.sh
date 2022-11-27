@@ -1,8 +1,10 @@
 #!/bin/bash
 cd /etc/privoxy
 
-sudo wget http://andrwe.org/_export/code/scripting/bash/privoxy-blocklist -O privoxy-blocklist.sh
-sudo sed -i -e 's/http:\/\/adblockplus.mozdev.org\/easylist\/easylist.txt/https:\/\/easylist.to\/easylist\/easylist.txt/' privoxy-blocklist.sh
+sudo rm -rf 280blocker_adblock_*.script.action
+sudo rm -rf 280blocker_adblock_*.script.filter
+
+sudo wget https://raw.githubusercontent.com/Andrwe/privoxy-blocklist/main/privoxy-blocklist.sh -O privoxy-blocklist.sh
 sudo chmod 700 privoxy-blocklist.sh
 sudo bash privoxy-blocklist.sh
 
